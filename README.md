@@ -4,24 +4,17 @@ TwigInflection
 pluralize
 ---------
 
-This allows you to pluralize a word, based on a count
 
-``` twig
+``` jinja
 
-{{ 6|pluralize("chicken") }}  
-{{ rows.length|pluralize("row") }}
+{{ "chicken"|pluralize }}
 
-```
+{{ rows.length }} {{ "row"|pluralize(rows.length) }}
 
-The extension uses [doctrine/inflector](http://github.com/doctrine/inflector) to
-guess the plural version of the word, but it can be optionally specified as an
-additional argument
-
-``` twig
-
-{{ users.length|pluralize("person", "users") }}
+{{ users.length }} {{ "person"|pluralize(users.length, "users") }}
 
 ```
+
 
 Contributing
 ------------

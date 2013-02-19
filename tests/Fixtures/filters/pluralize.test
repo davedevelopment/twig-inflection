@@ -1,14 +1,14 @@
 --TEST--
 "pluralize" filter
 --TEMPLATE--
-{{ 6|pluralize("chicken") }}
-{{ 1|pluralize("chicken") }}
-{{ 0|pluralize("chicken") }}
-{{ 10|pluralize("chicken", "turkeys") }}
+{{ "chicken"|pluralize }}
+{{ "chicken"|pluralize(1) }}
+{{ "chicken"|pluralize(0) }}
+{{ "chicken"|pluralize(10, "turkeys") }}
 --DATA--
 return array()
 --EXPECT--
-6 chickens
-1 chicken
-0 chickens
-10 turkeys
+chickens
+chicken
+chickens
+turkeys

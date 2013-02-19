@@ -1,0 +1,16 @@
+--TEST--
+"singularize" filter
+--TEMPLATE--
+{{ "chickens"|singularize }}
+{{ "chickens"|singularize(1) }}
+{{ "chickens"|singularize(0) }}
+{{ "chickens"|singularize(10) }}
+{{ "chickens"|singularize(1, "turkey") }}
+--DATA--
+return array()
+--EXPECT--
+chicken
+chicken
+chickens
+chickens
+turkey

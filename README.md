@@ -9,9 +9,30 @@ pluralize
 
 {{ "chicken"|pluralize }}
 
+=> chickens
+
 {{ rows.length }} {{ "row"|pluralize(rows.length) }}
 
+=> 1 row
+=> 2 rows
+
 {{ users.length }} {{ "person"|pluralize(users.length, "users") }}
+
+=> 1 person
+=> 2 users
+
+```
+
+singularize
+-----------
+
+The opposite of pluralize, working in the same manner
+
+``` jinja 
+
+{{ "chickens"|singularize }}
+
+=> chicken
 
 ```
 

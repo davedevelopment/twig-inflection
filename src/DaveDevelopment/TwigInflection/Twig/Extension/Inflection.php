@@ -2,6 +2,8 @@
 
 namespace DaveDevelopment\TwigInflection\Twig\Extension;
 
+use Twig\TwigFilter;
+
 class Inflection extends \Twig_Extension
 {
     public function getName()
@@ -12,8 +14,8 @@ class Inflection extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'pluralize' => new \Twig_Filter_Function(__CLASS__.'::pluralize'),
-            'singularize' => new \Twig_Filter_Function(__CLASS__.'::singularize'),
+            new TwigFilter('pluralize', __CLASS__.'::pluralize'),
+            new TwigFilter('singularize', __CLASS__.'::singularize'),
         );
     }
 
